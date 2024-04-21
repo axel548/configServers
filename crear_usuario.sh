@@ -4,13 +4,12 @@
 #sh crear_usuario.sh usuario 'contrasenia'
 
 # Verificar si se proporcionaron los argumentos de usuario y contraseña
-if [ -z $1 ] || [ -z $2 ]; then
-    echo "Por favor, proporciona el nombre de usuario y la contraseña."
+if [ -z $1 ]; then
+    echo "Por favor, proporciona el nombre de usuario."
     exit 1  # Salir del script con código de error
 fi
 
 usuario=$1
-contrasena=$2
 
 echo "Creando usuario..."
 adduser --disabled-password --gecos "" "$usuario"
